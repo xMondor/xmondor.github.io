@@ -179,34 +179,69 @@
 
         .alert::before { content: '✓'; flex-shrink: 0; font-weight: 600; }
 
-        /* ── Table ── */
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
+        /* ── Service / Permission cards ── */
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
             margin-top: 12px;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .info-card-title {
+            color: var(--text);
+            font-weight: 600;
+            font-size: 13px;
+            font-family: 'DM Mono', monospace;
+        }
+
+        .info-card-row {
+            display: flex;
+            gap: 6px;
+            align-items: flex-start;
             font-size: 13px;
         }
 
-        .data-table th {
-            text-align: left;
+        .info-card-label {
             color: var(--muted);
-            font-weight: 500;
-            padding: 6px 10px;
-            border-bottom: 1px solid var(--border);
             font-size: 11px;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
+            min-width: 68px;
+            padding-top: 1px;
+            flex-shrink: 0;
         }
 
-        .data-table td {
-            padding: 10px 10px;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+        .info-card-value {
             color: var(--muted);
-            vertical-align: top;
+            font-size: 13px;
+            line-height: 1.5;
         }
 
-        .data-table td:first-child { color: var(--text); font-weight: 500; }
-        .data-table tr:last-child td { border-bottom: none; }
+        .info-card-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-family: 'DM Mono', monospace;
+            background: rgba(34,197,94,0.1);
+            color: var(--green);
+            border-radius: 5px;
+            padding: 2px 8px;
+        }
+
+        .info-card-badge.neutral {
+            background: rgba(100,116,139,0.15);
+            color: #94A3B8;
+        }
 
         /* ── Footer ── */
         footer {
@@ -266,69 +301,93 @@
     <!-- Permisiuni -->
     <section>
         <h2><span class="icon amber">📍</span>Permisiuni solicitate</h2>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Permisiune</th>
-                    <th>Utilizare</th>
-                    <th>Transmisă extern?</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Locație (GPS)</td>
-                    <td>Centrarea hărții pe poziția ta curentă. Opțională - harta funcționează și fără.</td>
-                    <td>Nu - folosită doar local</td>
-                </tr>
-                <tr>
-                    <td>Internet</td>
-                    <td>Descărcarea zonelor ROMATSA, NOTAM-urilor, datelor meteo și tile-urilor de hartă.</td>
-                    <td>Doar către sursele de date de mai jos</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="card-list">
+            <div class="info-card">
+                <div class="info-card-title">📍 Locație (GPS)</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Utilizare</span>
+                    <span class="info-card-value">Centrarea hărții pe poziția ta curentă. Opțională — harta funcționează și fără.</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Extern?</span>
+                    <span class="info-card-badge">Nu — doar local</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-title">🌐 Internet</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Utilizare</span>
+                    <span class="info-card-value">Descărcarea zonelor ROMATSA, NOTAM-urilor, datelor meteo și tile-urilor de hartă.</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Extern?</span>
+                    <span class="info-card-badge neutral">Doar către sursele de mai jos</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Servicii terte -->
     <section>
         <h2><span class="icon purple">🌐</span>Servicii externe utilizate</h2>
         <p>Aplicația comunică cu următoarele servicii externe, exclusiv pentru funcționalitățile de bază. Nicio cerere nu conține date personale.</p>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Serviciu</th>
-                    <th>Scop</th>
-                    <th>Date trimise</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>flightplan.romatsa.ro</td>
-                    <td>Zone restrictive UAV și NOTAM-uri active din România</td>
-                    <td>Niciuna - request simplu GET</td>
-                </tr>
-                <tr>
-                    <td>open-meteo.com</td>
-                    <td>Prognoză meteo (vânt, vizibilitate, precipitații)</td>
-                    <td>Coordonate geografice (lat/lon)</td>
-                </tr>
-                <tr>
-                    <td>nominatim.openstreetmap.org</td>
-                    <td>Geocodare - căutare locație după nume</td>
-                    <td>Textul introdus în câmpul de căutare</td>
-                </tr>
-                <tr>
-                    <td>tile.openstreetmap.org</td>
-                    <td>Tile-uri de hartă</td>
-                    <td>Coordonate tile solicitate</td>
-                </tr>
-                <tr>
-                    <td>xmondor.github.io</td>
-                    <td>Verificarea disponibilității unei versiuni noi a aplicației</td>
-                    <td>Niciuna - request simplu GET</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="card-list">
+            <div class="info-card">
+                <div class="info-card-title">flightplan.romatsa.ro</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Scop</span>
+                    <span class="info-card-value">Zone restrictive UAV și NOTAM-uri active din România</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Date trimise</span>
+                    <span class="info-card-badge">Niciuna — GET simplu</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-title">open-meteo.com</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Scop</span>
+                    <span class="info-card-value">Prognoză meteo (vânt, vizibilitate, precipitații)</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Date trimise</span>
+                    <span class="info-card-badge neutral">Coordonate geografice (lat/lon)</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-title">nominatim.openstreetmap.org</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Scop</span>
+                    <span class="info-card-value">Geocodare — căutare locație după nume</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Date trimise</span>
+                    <span class="info-card-badge neutral">Textul din câmpul de căutare</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-title">tile.openstreetmap.org</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Scop</span>
+                    <span class="info-card-value">Tile-uri de hartă</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Date trimise</span>
+                    <span class="info-card-badge neutral">Coordonate tile solicitate</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-title">xmondor.github.io</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Scop</span>
+                    <span class="info-card-value">Verificarea disponibilității unei versiuni noi a aplicației</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Date trimise</span>
+                    <span class="info-card-badge">Niciuna — GET simplu</span>
+                </div>
+            </div>
+        </div>
         <p style="margin-top:14px;">Open-Meteo și Nominatim/OpenStreetMap sunt servicii open source. Politicile lor de confidențialitate sunt disponibile la <a href="https://open-meteo.com/en/terms" style="color:var(--accent)">open-meteo.com</a> și <a href="https://osmfoundation.org/wiki/Privacy_Policy" style="color:var(--accent)">osmfoundation.org</a>.</p>
     </section>
 
