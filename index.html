@@ -1,1 +1,428 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Politică de Confidențialitate - DroneMap RO</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg:        #0f1117;
+            --surface:   #1a1d27;
+            --border:    #2a2d3a;
+            --accent:    #1E88E5;
+            --accent-dim:#1565b0;
+            --green:     #22C55E;
+            --text:      #e8eaf0;
+            --muted:     #8891a8;
+            --faint:     #3a3d4a;
+        }
 
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* ── Header ── */
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 28px 24px 24px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(30,136,229,0.12);
+            border: 1px solid rgba(30,136,229,0.3);
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 12px;
+            color: var(--accent);
+            font-family: 'DM Mono', monospace;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .badge::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        h1 {
+            font-size: clamp(22px, 5vw, 32px);
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* ── Layout ── */
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        /* ── Sections ── */
+        section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 .icon {
+            width: 28px; height: 28px;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        h2 .icon.blue  { background: rgba(30,136,229,0.15); color: var(--accent); }
+        h2 .icon.green { background: rgba(34,197,94,0.12);  color: var(--green); }
+        h2 .icon.amber { background: rgba(245,158,11,0.12); color: #F59E0B; }
+        h2 .icon.purple{ background: rgba(139,92,246,0.12); color: #A78BFA; }
+        h2 .icon.slate { background: rgba(100,116,139,0.15);color: #94A3B8; }
+
+        p { color: var(--muted); margin-bottom: 10px; font-size: 14px; }
+        p:last-child { margin-bottom: 0; }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        ul li {
+            color: var(--muted);
+            font-size: 14px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+            color: var(--faint);
+        }
+
+        ul li strong { color: var(--text); font-weight: 500; }
+
+        /* ── Chip row ── */
+        .chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .chip {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            background: var(--faint);
+            color: var(--muted);
+            border-radius: 6px;
+            padding: 4px 10px;
+        }
+
+        .chip.green {
+            background: rgba(34,197,94,0.1);
+            color: var(--green);
+        }
+
+        /* ── Alert box ── */
+        .alert {
+            background: rgba(34,197,94,0.07);
+            border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 10px;
+            padding: 14px 16px;
+            color: #86efac;
+            font-size: 13px;
+            margin-top: 12px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .alert::before { content: '✓'; flex-shrink: 0; font-weight: 600; }
+
+        /* ── Service / Permission cards ── */
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .info-card-title {
+            color: var(--text);
+            font-weight: 600;
+            font-size: 13px;
+            font-family: 'DM Mono', monospace;
+        }
+
+        .info-card-row {
+            display: flex;
+            gap: 6px;
+            align-items: flex-start;
+            font-size: 13px;
+        }
+
+        .info-card-label {
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            min-width: 68px;
+            padding-top: 1px;
+            flex-shrink: 0;
+        }
+
+        .info-card-value {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .info-card-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-family: 'DM Mono', monospace;
+            background: rgba(34,197,94,0.1);
+            color: var(--green);
+            border-radius: 5px;
+            padding: 2px 8px;
+        }
+
+        .info-card-badge.neutral {
+            background: rgba(100,116,139,0.15);
+            color: #94A3B8;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 32px 20px;
+            color: var(--faint);
+            font-size: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 480px) {
+            section { padding: 18px 16px; }
+            main { padding: 24px 14px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="badge">ro.emondor.dronemapro</div>
+    <h1>DroneMap <span>RO</span></h1>
+    <p class="subtitle">Politică de Confidențialitate &nbsp;·&nbsp; Ultima actualizare: Aprilie 2026</p>
+</header>
+
+<main>
+
+    <!-- Intro -->
+    <section>
+        <h2><span class="icon blue">📋</span>Prezentare generală</h2>
+        <p>DroneMap RO este o aplicație gratuită pentru piloții de drone din România. Această politică descrie ce date sunt utilizate, cum și de către cine.</p>
+        <div class="alert">
+            DroneMap RO nu colectează, nu stochează și nu transmite date personale către dezvoltator sau terțe părți comerciale.
+        </div>
+    </section>
+
+    <!-- Date colectate -->
+    <section>
+        <h2><span class="icon green">🔒</span>Date colectate de aplicație</h2>
+        <p>Aplicația nu colectează date personale. Nu există conturi de utilizator, nu există autentificare și nu există sincronizare cu servere externe proprii.</p>
+        <p>Singurele date stocate sunt <strong>local pe dispozitivul tău</strong>, în baza de date SQLite a aplicației:</p>
+        <ul>
+            <li><strong>Cache tile-uri hartă</strong> - imagini de hartă descărcate anterior, pentru utilizare offline</li>
+            <li><strong>Cache date meteo</strong> - prognoze meteo recente, pentru reducerea consumului de date</li>
+            <li><strong>Date zone ROMATSA și NOTAM</strong> - descărcate de pe serverele ROMATSA și stocate local</li>
+            <li><strong>Preferințe aplicație</strong> - setări locale (filtre, stare onboarding)</li>
+        </ul>
+        <div class="chip-row">
+            <span class="chip green">Fără cont</span>
+            <span class="chip green">Fără autentificare</span>
+            <span class="chip green">Fără date personale</span>
+            <span class="chip green">Stocare doar locală</span>
+        </div>
+    </section>
+
+    <!-- Permisiuni -->
+    <section>
+        <h2><span class="icon amber">📍</span>Permisiuni solicitate</h2>
+        <div class="card-list">
+            <div class="info-card">
+                <div class="info-card-title">📍 Locație (GPS)</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Utilizare</span>
+                    <span class="info-card-value">Centrarea hărții pe poziția ta curentă. Opțională - harta funcționează și fără.</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Extern?</span>
+                    <span class="info-card-badge">Nu - doar local</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-title">🌐 Internet</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Utilizare</span>
+                    <span class="info-card-value">Descărcarea zonelor ROMATSA, NOTAM-urilor, datelor meteo și tile-urilor de hartă.</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Extern?</span>
+                    <span class="info-card-badge neutral">Doar către sursele de mai jos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicii terte -->
+    <section>
+        <h2><span class="icon purple">🌐</span>Servicii externe utilizate</h2>
+        <p>Aplicația comunică cu următoarele servicii externe, exclusiv pentru funcționalitățile de bază. Nicio cerere nu conține date personale.</p>
+        <div class="card-list">
+            <div class="info-card">
+                <div class="info-card-title">flightplan.romatsa.ro</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Scop</span>
+                    <span class="info-card-value">Zone restrictive UAV și NOTAM-uri active din România</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Date trimise</span>
+                    <span class="info-card-badge">Niciuna - GET simplu</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-title">open-meteo.com</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Scop</span>
+                    <span class="info-card-value">Prognoză meteo (vânt, vizibilitate, precipitații)</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Date trimise</span>
+                    <span class="info-card-badge neutral">Coordonate geografice (lat/lon)</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-title">nominatim.openstreetmap.org</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Scop</span>
+                    <span class="info-card-value">Geocodare - căutare locație după nume</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Date trimise</span>
+                    <span class="info-card-badge neutral">Textul din câmpul de căutare</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-title">tile.openstreetmap.org</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Scop</span>
+                    <span class="info-card-value">Tile-uri de hartă</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Date trimise</span>
+                    <span class="info-card-badge neutral">Coordonate tile solicitate</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-title">xmondor.github.io</div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Scop</span>
+                    <span class="info-card-value">Verificarea disponibilității unei versiuni noi a aplicației</span>
+                </div>
+                <div class="info-card-row">
+                    <span class="info-card-label">Date trimise</span>
+                    <span class="info-card-badge">Niciuna - GET simplu</span>
+                </div>
+            </div>
+        </div>
+        <p style="margin-top:14px;">Open-Meteo și Nominatim/OpenStreetMap sunt servicii open source. Politicile lor de confidențialitate sunt disponibile la <a href="https://open-meteo.com/en/terms" style="color:var(--accent)">open-meteo.com</a> și <a href="https://osmfoundation.org/wiki/Privacy_Policy" style="color:var(--accent)">osmfoundation.org</a>.</p>
+    </section>
+
+    <!-- Retentie date -->
+    <section>
+        <h2><span class="icon slate">🗄️</span>Retenție și ștergere date</h2>
+        <p>Toate datele stocate local pot fi șterse în orice moment prin dezinstalarea aplicației. Nu există date stocate pe servere externe controlate de dezvoltator.</p>
+        <ul>
+            <li><strong>Cache hartă și meteo</strong> - gestionate automat de aplicație, suprascrise la actualizare</li>
+            <li><strong>Preferințe</strong> - șterse la dezinstalare</li>
+            <li><strong>Date ROMATSA/NOTAM</strong> - actualizate la fiecare lansare cu conexiune activă</li>
+        </ul>
+    </section>
+
+    <!-- Copii -->
+    <section>
+        <h2><span class="icon slate">👤</span>Minori</h2>
+        <p>Aplicația nu este destinată utilizatorilor sub 16 ani și nu colectează în mod intenționat informații de la minori. Dacă ești părinte și crezi că un minor a utilizat această aplicație, nu există date personale stocate care ar putea fi identificate sau șterse.</p>
+    </section>
+
+    <!-- Contact -->
+    <section>
+        <h2><span class="icon blue">✉️</span>Contact</h2>
+        <p>Pentru întrebări legate de această politică de confidențialitate sau de aplicație:</p>
+        <div class="chip-row">
+            <span class="chip">mondor.game.dev@gmail.com</span>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 DroneMap RO &nbsp;·&nbsp; <a href="https://ko-fi.com/dronemapro">ko-fi.com/dronemapro</a></p>
+    <p style="margin-top:6px;">Această pagină este găzduită pe GitHub Pages și nu utilizează cookies sau analytics.</p>
+</footer>
+
+</body>
+</html>
