@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termeni și Condiții de Utilizare — DroneMap RO</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Termenii și condițiile de utilizare ale aplicației DroneMap RO — instrument informativ pentru piloții de drone din România.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DroneMap RO">
+<meta property="og:title" content="Termeni și Condiții de Utilizare — DroneMap RO">
+<meta property="og:description" content="Termenii și condițiile de utilizare ale aplicației DroneMap RO — instrument informativ pentru piloții de drone din România.">
+<style>
+:root{
+  --bg-deep:#0D0D1A;--bg-base:#1A1A2E;--bg-card:#161E30;--bg-elevated:#1E2A40;
+  --border-subtle:rgba(255,255,255,0.06);--border-dim:rgba(255,255,255,0.11);
+  --text-primary:#E4EBF5;--text-secondary:#7A8FB5;--text-muted:#3D4F6A;
+  --purple:#512BD4;--purple-light:#7B5CF0;
+  --blue:#3B82F6;--blue-bright:#60A5FA;
+  --warning:#FF9800;--teal:#00BCD4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg-base);color:var(--text-primary);
+  font-family:'Segoe UI Variable','Segoe UI',system-ui,-apple-system,sans-serif;
+  font-size:15px;line-height:1.7;min-height:100vh;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(13,13,26,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border-subtle);
+  display:flex;align-items:center;gap:14px;padding:0 20px;height:60px;
+}
+.logo{display:flex;align-items:center;text-decoration:none;gap:1px;}
+.logo-text{font-size:17px;font-weight:700;color:#fff;letter-spacing:-.4px;}
+.logo-dot{width:5px;height:5px;background:var(--blue);border-radius:50%;margin:0 3px;}
+.logo-ro{font-size:17px;font-weight:800;color:var(--purple-light);letter-spacing:-.4px;}
+.header-sep{width:1px;height:20px;background:var(--border-dim);}
+.header-page{font-size:13px;color:var(--text-muted);font-weight:500;}
+.back-btn{
+  margin-left:auto;display:flex;align-items:center;gap:6px;
+  padding:7px 13px;border-radius:8px;
+  background:var(--bg-elevated);border:1px solid var(--border-dim);
+  color:var(--text-secondary);font-size:13px;font-weight:500;font-family:inherit;
+  cursor:pointer;text-decoration:none;transition:border-color .2s,color .2s;
+}
+.back-btn:hover{border-color:rgba(255,255,255,.2);color:var(--text-primary);}
+
+/* ── Layout ──────────────────────────────────────────── */
+.page-wrap{max-width:720px;margin:0 auto;padding:48px 20px 80px;}
+
+.page-title{
+  font-size:28px;font-weight:800;color:var(--text-primary);
+  letter-spacing:-.6px;margin-bottom:6px;
+}
+.page-meta{font-size:13px;color:var(--text-muted);margin-bottom:40px;}
+
+/* ── Section cards ───────────────────────────────────── */
+.section{
+  background:var(--bg-card);border:1px solid var(--border-subtle);
+  border-radius:16px;padding:24px;margin-bottom:16px;
+}
+.section-icon{
+  width:36px;height:36px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:14px;flex-shrink:0;
+}
+.section h2{
+  font-size:16px;font-weight:700;color:var(--text-primary);
+  margin-bottom:10px;letter-spacing:-.2px;
+}
+.section h3{
+  font-size:13.5px;font-weight:700;color:var(--text-secondary);
+  margin:16px 0 8px;letter-spacing:.3px;text-transform:uppercase;
+}
+.section p{
+  font-size:14px;color:var(--text-secondary);line-height:1.75;margin-bottom:10px;
+}
+.section p:last-child{margin-bottom:0;}
+.section ul{
+  padding-left:18px;margin-bottom:10px;
+}
+.section ul li{
+  font-size:14px;color:var(--text-secondary);line-height:1.75;margin-bottom:4px;
+}
+.section ul li:last-child{margin-bottom:0;}
+.section ol{
+  padding-left:20px;margin-bottom:10px;
+}
+.section ol li{
+  font-size:14px;color:var(--text-secondary);line-height:1.75;margin-bottom:6px;
+}
+
+/* ── Highlight boxes ─────────────────────────────────── */
+.highlight{
+  background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.18);
+  border-radius:10px;padding:14px 16px;margin-bottom:12px;
+  font-size:13.5px;color:var(--text-secondary);line-height:1.7;
+}
+.highlight strong{color:var(--blue-bright);}
+.highlight-warn{
+  background:rgba(255,152,0,.08);border:1px solid rgba(255,152,0,.2);
+  border-radius:10px;padding:14px 16px;margin-bottom:12px;
+  font-size:13.5px;color:var(--text-secondary);line-height:1.7;
+}
+.highlight-warn strong{color:var(--warning);}
+
+/* ── Contact card ────────────────────────────────────── */
+.contact-card{
+  display:flex;align-items:center;gap:14px;
+  background:var(--bg-elevated);border:1px solid var(--border-dim);
+  border-radius:12px;padding:16px;margin-top:12px;
+}
+.contact-card a{color:var(--blue-bright);text-decoration:none;font-weight:600;}
+.contact-card a:hover{text-decoration:underline;}
+
+/* ── Footer ──────────────────────────────────────────── */
+footer{
+  border-top:1px solid var(--border-subtle);
+  padding:24px 20px;text-align:center;
+  font-size:12px;color:var(--text-muted);
+}
+footer a{color:var(--text-muted);text-decoration:none;}
+footer a:hover{color:var(--text-secondary);}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/">
+    <span class="logo-text">DroneMap</span>
+    <span class="logo-dot"></span>
+    <span class="logo-ro">RO</span>
+  </a>
+  <div class="header-sep"></div>
+  <span class="header-page">Termeni și Condiții de Utilizare</span>
+  <a class="back-btn" href="/">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Înapoi la hartă
+  </a>
+</header>
+
+<div class="page-wrap">
+
+  <h1 class="page-title">Termeni și Condiții de Utilizare</h1>
+  <p class="page-meta">Ultima actualizare: Mai 2026 &nbsp;·&nbsp; DroneMap RO</p>
+
+  <div class="highlight-warn">
+    <strong>Important:</strong> DroneMap RO este un instrument informativ independent. Aplicația <strong>nu emite autorizații de zbor</strong> și nu înlocuiește nicio procedură oficială. Utilizarea aplicației nu te exonerează de obligația de a respecta toate legile și reglementările aplicabile.
+  </div>
+
+  <!-- 1. Introducere -->
+  <div class="section">
+    <div class="section-icon" style="background:rgba(59,130,246,.12);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-bright)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+    </div>
+    <h2>1. Introducere</h2>
+    <p>Bine ai venit în DroneMap RO („Aplicația"). Prin accesarea sau utilizarea acestei aplicații, ești de acord să respecți acești Termeni și Condiții de Utilizare („Termenii").</p>
+    <p>DroneMap RO este un instrument informativ independent, creat pentru a ajuta piloții de drone din România să vizualizeze restricțiile de spațiu aerian și NOTAM-urile active. Aplicația <strong>nu este</strong> un sistem oficial al niciunei autorități și nu este afiliată cu ROMATSA, AACR, MApN sau orice altă entitate publică.</p>
+    <p>Aplicația nu emite autorizații de zbor și nu înlocuiește nicio procedură oficială. Utilizarea acesteia nu elimină obligația ta de a respecta toate legile și reglementările naționale și internaționale aplicabile.</p>
+  </div>
+
+  <!-- 2. Eligibilitate -->
+  <div class="section">
+    <div class="section-icon" style="background:rgba(76,175,80,.12);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    </div>
+    <h2>2. Eligibilitate</h2>
+    <p>Utilizarea aplicației este permisă persoanelor cu vârsta de minimum <strong>16 ani</strong>. Această limită se referă la accesul la aplicație și nu modifică eventualele excepții sau cerințe speciale prevăzute de legislația aplicabilă operațiunilor UAS (de exemplu, drone sub 250 g în clasa C0 sau operare sub supravegherea directă a unui pilot autorizat).</p>
+    <p>Responsabilitatea verificării cerințelor de vârstă aplicabile operațiunii tale îți revine în totalitate.</p>
+  </div>
+
+  <!-- 3. Responsabilitățile utilizatorului -->
+  <div class="section">
+    <div class="section-icon" style="background:rgba(255,152,0,.1);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--warning)" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    </div>
+    <h2>3. Responsabilitățile utilizatorului</h2>
+
+    <h3>3.1 Conduită generală</h3>
+    <p>Ești singurul responsabil pentru acțiunile tale. Sunt interzise:</p>
+    <ul>
+      <li>Încălcarea legilor sau restricțiilor de spațiu aerian în vigoare</li>
+      <li>Efectuarea de zboruri în zone restricționate fără autorizația corespunzătoare</li>
+      <li>Utilizarea aplicației în scopuri ilegale sau pentru facilitarea unor activități ilegale</li>
+      <li>Utilizarea informațiilor din aplicație ca sursă unică și suficientă înaintea unui zbor, fără verificarea surselor oficiale</li>
+    </ul>
+
+    <h3>3.2 Conformitate cu reglementările</h3>
+    <p>Utilizatorul are obligația de a respecta toate reglementările aplicabile, inclusiv, după caz și fără a se limita la, următoarele acte normative, în forma lor actualizată și cu modificările și completările ulterioare:</p>
+    <ol>
+      <li>Regulamentul (UE) 2018/1139 privind normele comune în domeniul aviației civile</li>
+      <li>Regulamentul delegat (UE) 2019/945 privind sistemele de aeronave fără pilot la bord</li>
+      <li>Regulamentul de punere în aplicare (UE) 2019/947 privind normele și procedurile de operare a UAS</li>
+      <li>Regulamentul (CE) nr. 785/2004 privind cerințele de asigurare ale transportatorilor aerieni</li>
+      <li>Legea nr. 21/2020 - Codul aerian român</li>
+      <li>HG nr. 912/2010 privind autorizarea zborurilor în spațiul aerian național</li>
+      <li>HG nr. 859/2021 privind autorizarea zborului aeronavelor</li>
+      <li>HG nr. 643/2020 de implementare a reglementărilor UE privind UAS</li>
+    </ol>
+    <p>Resurse pentru reglementările în vigoare: <a href="https://eur-lex.europa.eu" target="_blank" rel="noopener" style="color:var(--blue-bright)">EUR-Lex</a>, <a href="https://www.easa.europa.eu" target="_blank" rel="noopener" style="color:var(--blue-bright)">EASA</a>, <a href="https://www.caa.ro" target="_blank" rel="noopener" style="color:var(--blue-bright)">AACR (caa.ro)</a>.</p>
+
+    <h3>3.3 Limitele informației furnizate</h3>
+    <p>Datele despre spațiul aerian afișate în aplicație provin din surse publice ROMATSA/AIS și sunt furnizate <strong>exclusiv cu titlu orientativ</strong>. Ele pot fi incomplete, temporar indisponibile sau pot conține erori.</p>
+    <p>Aplicația nu oferă consultanță juridică, aeronautică sau operațională și nu poate confirma eligibilitatea unui anumit zbor.</p>
+    <ul>
+      <li>Utilizatorul are responsabilitatea de a verifica statusul actual al spațiului aerian prin sursele oficiale (ROMATSA, NOTAM Office, ATC) înainte de orice zbor.</li>
+      <li>Aplicația nu garantează acuratețea, completitudinea sau actualitatea datelor afișate.</li>
+      <li>Aplicația nu furnizează servicii de separare a aeronavelor și nu este un serviciu de control al traficului aerian.</li>
+      <li>Apariția unei zone ca „liberă" în aplicație <strong>nu constituie</strong> o autorizație de zbor.</li>
+    </ul>
+  </div>
+
+  <!-- 4. Limitarea răspunderii -->
+  <div class="section">
+    <div class="section-icon" style="background:rgba(244,67,54,.1);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F44336" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    <h2>4. Limitarea răspunderii</h2>
+    <p>Aplicația este furnizată <strong>„ca atare"</strong> și <strong>„după cum este disponibilă"</strong>, fără garanții de niciun fel, explicite sau implicite, inclusiv în ceea ce privește acuratețea, completitudinea, fiabilitatea sau adecvarea pentru un scop anume.</p>
+    <p>În măsura permisă de lege, dezvoltatorul nu este responsabil pentru accidente, incidente, amenzi, întârzieri, respingeri de autorizații sau orice alte daune directe ori indirecte rezultate din utilizarea aplicației sau din operațiuni de zbor efectuate pe baza informațiilor furnizate de aceasta.</p>
+    <p>Utilizatorul rămâne singurul responsabil pentru verificarea independentă a informațiilor despre spațiul aerian și pentru obținerea tuturor autorizațiilor necesare prin canalele oficiale.</p>
+  </div>
+
+  <!-- 5. Proprietate intelectuală -->
+  <div class="section">
+    <div class="section-icon" style="background:rgba(123,92,240,.12);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple-light)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    </div>
+    <h2>5. Proprietate intelectuală</h2>
+    <p>Conținutul propriu al aplicației DroneMap RO - inclusiv interfața, designul, grafica, textele proprii și codul sursă - este proprietatea dezvoltatorului sau este utilizat în baza unor licențe corespunzătoare.</p>
+    <p>Datele aeronautice afișate în aplicație (zone restricționate, NOTAM-uri) provin din surse publice ROMATSA/AIS și sunt utilizate exclusiv în scop informativ. Aceste date pot fi modificate, temporar indisponibile sau incomplete; utilizatorul trebuie să verifice întotdeauna sursele oficiale înainte de zbor.</p>
+    <p>Hărțile de fundal utilizează servicii furnizate de terți, inclusiv OpenStreetMap/CARTO și Esri. Atribuirile și drepturile aferente acestor servicii aparțin furnizorilor respectivi și sunt afișate conform cerințelor acestora în interfața aplicației.</p>
+    <p>Nu este permisă copierea, reproducerea sau redistribuirea codului sau conținutului aplicației fără acordul scris prealabil al dezvoltatorului.</p>
+  </div>
+
+  <!-- 6. Utilizări interzise -->
+  <div class="section">
+    <div class="section-icon" style="background:rgba(244,67,54,.1);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F44336" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+    </div>
+    <h2>6. Utilizări interzise</h2>
+    <p>Pe lângă restricțiile menționate anterior, este interzisă:</p>
+    <ul>
+      <li>Utilizarea aplicației în scopuri ilegale sau pentru a facilita activități ilegale</li>
+      <li>Tentativa de acces neautorizat la infrastructura sau sistemele asociate aplicației</li>
+      <li>Perturbarea securității, integrității sau performanței aplicației</li>
+      <li>Transmiterea de cod malițios sau conținut dăunător prin intermediul aplicației</li>
+      <li>Utilizarea automată (scraping/crawling) a aplicației, interfeței sau infrastructurii DroneMap RO fără acordul dezvoltatorului</li>
+    </ul>
+  </div>
+
+  <!-- 7. Legea aplicabilă -->
+  <div class="section">
+    <div class="section-icon" style="background:rgba(0,188,212,.1);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><path d="M3 6l9-3 9 3v6c0 5.25-3.75 10.14-9 11.25C6.75 22.14 3 17.25 3 12V6z"/><polyline points="9 12 11 14 15 10"/></svg>
+    </div>
+    <h2>7. Legea aplicabilă</h2>
+    <p>Acești Termeni sunt guvernați de legea română. Orice litigiu care decurge din sau în legătură cu utilizarea aplicației va fi supus jurisdicției exclusive a instanțelor din România.</p>
+    <p>Aplicabilitatea reglementărilor europene relevante (GDPR, regulamentele UAS etc.) nu este afectată de această clauză.</p>
+  </div>
+
+  <!-- 8. Modificări -->
+  <div class="section">
+    <div class="section-icon" style="background:rgba(59,130,246,.1);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-bright)" stroke-width="2" stroke-linecap="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+    </div>
+    <h2>8. Modificări ale termenilor</h2>
+    <p>Dezvoltatorul poate actualiza acești Termeni periodic, de exemplu pentru a reflecta modificări legislative sau funcționale ale aplicației. Data ultimei modificări este afișată în antetul acestei pagini.</p>
+    <p>Continuarea utilizării aplicației după publicarea modificărilor constituie acceptarea noilor Termeni. Deoarece aplicația nu presupune crearea unui cont și nu menține o listă de adrese de email pentru notificări, utilizatorii nu pot fi notificați direct despre modificări.</p>
+  </div>
+
+  <!-- 9. Contact -->
+  <div class="section">
+    <div class="section-icon" style="background:rgba(76,175,80,.12);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </div>
+    <h2>9. Contact</h2>
+    <p>Pentru orice întrebări sau nelămuriri legate de acești Termeni și Condiții:</p>
+    <div class="contact-card">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <a href="mailto:contact@emondor.ro">contact@emondor.ro</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 DroneMap RO &nbsp;·&nbsp; <a href="/">Înapoi la hartă</a> &nbsp;·&nbsp; <a href="/privacy.html">Politică de confidențialitate</a> &nbsp;·&nbsp; Datele aeronautice provin de la ROMATSA - verificați întotdeauna sursele oficiale înainte de zbor.</p>
+</footer>
+
+</body>
+</html>
